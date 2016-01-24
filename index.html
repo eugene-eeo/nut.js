@@ -1,0 +1,58 @@
+<html>
+<head>
+  <meta charset='utf8'/>
+  <meta name=viewport content="width=device-width,initial-scale=1"/>
+  <title>Nut.js</title>
+  <style>
+body {
+  font-family: 'Georgia', serif;
+  margin: 3em auto;
+  width: 25em;
+  text-align: center;
+  font-size: 21px;
+}
+pre {
+  font-family: Consolas, Monaco, monospace;
+  background-color: #EEE;
+  padding: 0.3em 1em;
+}
+h1, p {
+  margin: 0.4em 0 0 0;
+}
+a {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  color: #000;
+  background-color: #EEE;
+  text-decoration: none;
+  min-width: 4.5em;
+  margin: 0 0.2em;
+}
+@media only screen and (max-device-width: 480px) {
+  body {
+    width: inherit;
+    font-size:18px;
+    margin: 1.5em 1em;
+  }
+  a {
+    display: block;
+    width: calc(100% - 5em);
+    margin: 0.5em auto;
+  }
+}
+  </style>
+</head>
+<body>
+  <img src='nut.png'></img>
+  <h1>nut.js</h1>
+  <p>
+    Dead simple, friendly selector engine that allows
+    you to abuse ES5 Array methods to your heart's
+    desire.
+  </p>
+  <pre>$('div.block').forEach(fn)</pre>
+  <a href='https://github.com/eugene-eeo/nut.js'>Github</a>
+  <a href='https://github.com/eugene-eeo/nut.js/releases/latest'>Download</a>
+</body>
+</html>
