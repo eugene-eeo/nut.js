@@ -1,7 +1,7 @@
 # nut.js
 
 `querySelectorAll` and friends are fast enough. Nut.js is a
-super tiny (229 bytes) wrapper around the DOM query methods
+super tiny (212 bytes) wrapper around the DOM query methods
 that returns an Array to allow you to write JQuery-esque code
 by abusing native ES5 array methods.
 
