@@ -12,11 +12,11 @@ nut('span.octicon')
   .reduce(/**/);
 ```
 
-**Note:** that when querying by id (i.e. '#id') `getElementById`
-is used and the element itself is returned:
+Nut.js also performs some optimisations:
 
 ```js
 nut('#id') === document.getElementById('id')
+nut('.klass')    // getElementsByClassName
 ```
 
 You can also pass in an optional context:
@@ -26,6 +26,6 @@ nut('query', element);
 nut('query', '#id');
 ```
 
-If you use a string as a context it will be evaluated as
-a selector, and the first element matched will be used as
-the context.
+If you use a string as the context argument it will be passed
+to the `nut` function, and the first element matched will be
+used as the context.
