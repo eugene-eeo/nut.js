@@ -1,0 +1,49 @@
+<!doctype>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="../bower_components/mocha/mocha.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <script src="../bower_components/chai/chai.js"></script>
+  <script src="../bower_components/mocha/mocha.js"></script>
+  <script>mocha.setup('bdd')</script>
+
+  <div id='nut'>
+    <span class='nut'></span>
+    <span class='nut'></span>
+  </div>
+
+  <script src="../nut.js"></script>
+  <script>
+assert = chai.assert;
+$ = nut;
+
+describe('nut', function() {
+  it('returns the element if it is an id query', function() {
+    assert.equal(nut('#nut'), document.getElementById('nut'));
+  });
+  it('supports classes', function() {
+    assert.deepEqual(
+      $('.nut'),
+      [].slice.call(document.getElementsByClassName('nut'))
+    );
+  });
+  it('supports selectors', function() {
+    assert.deepEqual(
+      $('#nut > span'),
+      $('.nut')
+    );
+    assert.deepEqual(
+      $('span.nut'),
+      $('.nut')
+    );
+  });
+});
+  </script>
+  <script>mocha.run();</script>
+</body>
+</html>
