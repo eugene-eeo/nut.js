@@ -1,7 +1,5 @@
 nut = function(s, ctx) {
-  ctx = typeof ctx == 'string'
-    ? nut(ctx)[0]
-    : (ctx || document);
+  ctx = ctx || document;
   return /^#[\w\-]+$/.test(s)
     ? ctx.getElementById(s.slice(1))
     : [].slice.call(

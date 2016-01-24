@@ -23,8 +23,8 @@ assert = chai.assert;
 $ = nut;
 
 describe('nut', function() {
-  it('returns the element if it is an id query', function() {
-    assert.equal(nut('#nut'), document.getElementById('nut'));
+  it('returns a one element array if it is an id query', function() {
+    assert.deepEqual(nut('#nut'), document.getElementById('nut'));
   });
   it('supports classes', function() {
     assert.deepEqual(
@@ -39,6 +39,12 @@ describe('nut', function() {
     );
     assert.deepEqual(
       $('span.nut'),
+      $('.nut')
+    );
+  });
+  it('supports a context element', function() {
+    assert.deepEqual(
+      $('span', $('#nut')),
       $('.nut')
     );
   });
