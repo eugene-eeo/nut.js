@@ -24,7 +24,6 @@ You can also pass in an optional context:
 ```js
 nut('query', element);
 nut('query', '#id');
-nut('query', nut.id('id'));
 ```
 
 If you use a string as a context it will be evaluated as
