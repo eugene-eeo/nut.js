@@ -48,6 +48,12 @@ describe('nut', function() {
       $('.nut')
     );
   });
+  it('supports a context string', function() {
+    assert.deepEqual(
+      $('span', '#nut'),
+      $('.nut')
+    );
+  });
 });
   </script>
   <script>mocha.run();</script>
