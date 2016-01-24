@@ -18,44 +18,7 @@
   </div>
 
   <script src="../nut.js"></script>
-  <script>
-assert = chai.assert;
-$ = nut;
-
-describe('nut', function() {
-  it('returns a one element array if it is an id query', function() {
-    assert.deepEqual(nut('#nut'), document.getElementById('nut'));
-  });
-  it('supports classes', function() {
-    assert.deepEqual(
-      $('.nut'),
-      [].slice.call(document.getElementsByClassName('nut'))
-    );
-  });
-  it('supports selectors', function() {
-    assert.deepEqual(
-      $('#nut > span'),
-      $('.nut')
-    );
-    assert.deepEqual(
-      $('span.nut'),
-      $('.nut')
-    );
-  });
-  it('supports a context element', function() {
-    assert.deepEqual(
-      $('span', $('#nut')),
-      $('.nut')
-    );
-  });
-  it('supports a context string', function() {
-    assert.deepEqual(
-      $('span', 'div#nut'),
-      $('.nut')
-    );
-  });
-});
-  </script>
+  <script src='test.js'></script>
   <script>mocha.run();</script>
 </body>
 </html>
