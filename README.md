@@ -2,7 +2,7 @@
 
 Modern 'selector engine'.
 
- - Comes in at ~0.2kB minified
+ - Comes in at ~0.3kB minified
  - Uses `querySelectorAll` and friends
  - Returns Arrays - abuse ES5 array methods
  - Optimises query methods
@@ -26,17 +26,14 @@ $('span.octicon')
   .reduce(/**/);
 
 // optimisations
-$('#id') === document.getElementById('id')
 $('.klass')    // getElementsByClassName
+$.el('#id')    // getElementById
 
 // context
 $('query', element);
-$('query', $('#id'));
 $('query', '#nut');
+$('query', $.el('#nut'));
 ```
-
-**Note:** `nut('#id')` returns the element itself. What if
-I have multiple IDs, you say? Well, [you shouldn't, really](http://programmers.stackexchange.com/a/127180).
 
 ### Installation
 

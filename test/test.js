@@ -2,16 +2,10 @@ describe('nut', function() {
   var $ = nut;
   var assert = chai.assert;
 
-  it('returns a one element array if it is an id query', function() {
-    assert.deepEqual(
-      $('#nut'),
-      document.getElementById('nut')
-    );
-  });
   it('supports classes', function() {
     assert.deepEqual(
       $('.nut'),
-      [].slice.call($('#nut').children)
+      [].slice.call($.el('#nut').children)
     );
   });
   it('supports selectors', function() {
@@ -26,7 +20,7 @@ describe('nut', function() {
   });
   it('supports a context element', function() {
     assert.deepEqual(
-      $('span', $('#nut')),
+      $('span', $.el('#nut')),
       $('.nut')
     );
   });
@@ -35,5 +29,24 @@ describe('nut', function() {
       $('span', 'div#nut'),
       $('.nut')
     );
+  });
+});
+
+describe('nut.el', function() {
+  var $ = nut;
+  var assert = chai.assert;
+
+  it('returns the first element matched', function() {
+    assert.equal(
+      $.el('#nut'),
+      document.getElementById('nut')
+    );
+  });
+
+  it('supports selectors', function() {
+    assert.equal(
+      $.el('#nut > span'),
+      $('#nut > span')[0]
+    )
   });
 });
