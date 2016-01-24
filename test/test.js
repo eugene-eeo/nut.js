@@ -3,7 +3,10 @@ describe('nut', function() {
   var assert = chai.assert;
 
   it('returns a one element array if it is an id query', function() {
-    assert.deepEqual($('#nut'), document.getElementById('nut'));
+    assert.deepEqual(
+      $('#nut'),
+      document.getElementById('nut')
+    );
   });
   it('supports classes', function() {
     assert.deepEqual(
