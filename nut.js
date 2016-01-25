@@ -1,5 +1,5 @@
 nut = function(s, ctx) {
-  ctx = nut._(ctx);
+  ctx = nut.el(ctx);
   return [].slice.call(
     /^\.[\w\-]+$/.test(s)
       ? ctx.getElementsByClassName(s.slice(1))
@@ -7,14 +7,10 @@ nut = function(s, ctx) {
 };
 
 nut.el = function(s, ctx) {
-  ctx = nut._(ctx);
-  return /^#[\w\-]+$/.test(s)
-    ? ctx.getElementById(s.slice(1))
-    : ctx.querySelector(s);
-};
-
-nut._ = function(ctx) {
-  return typeof ctx == 'string'
-    ? nut.el(ctx)
-    : ctx || document;
+  return typeof s != 'string'
+    ? (s || document)
+    : (ctx = nut.el(ctx),
+       /^#[\w\-]+$/.test(s)
+        ? ctx.getElementById(s.slice(1))
+        : ctx.querySelector(s));
 };
