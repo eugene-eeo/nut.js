@@ -38,15 +38,15 @@ describe('nut.el', function() {
 
   it('returns the first element matched', function() {
     assert.equal(
-      $.el('#nut'),
-      document.getElementById('nut')
+      $.el('.nut'),
+      $('.nut')[0]
     );
   });
 
   it('supports selectors', function() {
     assert.equal(
-      $.el('#nut > span'),
-      $('#nut > span')[0]
-    )
+      $.el('div#nut'),
+      document.getElementById('nut')
+    );
   });
 });
