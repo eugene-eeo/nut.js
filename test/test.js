@@ -39,7 +39,7 @@ describe('nut.el', function() {
   it('returns the first element matched', function() {
     assert.equal(
       $.el('.nut'),
-      $('.nut')[0]
+      document.getElementsByClassName('nut')[0]
     );
   });
 
