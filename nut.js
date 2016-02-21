@@ -7,10 +7,11 @@ nut = function(s, ctx) {
 };
 
 nut.el = function(s, ctx) {
-  return typeof s != 'string'
-    ? (s || document)
-    : (ctx = nut.el(ctx),
-       /^#[\w\-]+$/.test(s)
-        ? ctx.getElementById(s.slice(1))
-        : ctx.querySelector(s));
+  if (typeof s != 'string') {
+    return s || document;
+  }
+  ctx = nut.el(ctx);
+  return /^#[\w\-]+$/.test(s)
+    ? ctx.getElementById(s.slice(1))
+    : ctx.querySelector(s);
 };
