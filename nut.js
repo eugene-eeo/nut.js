@@ -11,5 +11,7 @@ nut.el = function(s, ctx) {
     return s || document;
   }
   ctx = nut.el(ctx);
-  return ctx.querySelector(s);
+  return /^#[\w\-]+$/.test(s) && ctx.getElementById
+    ? ctx.getElementById(s.slice(1))
+    : ctx.querySelector(s);
 };
