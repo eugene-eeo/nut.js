@@ -35,18 +35,26 @@ describe('nut', function() {
 describe('nut.el', function() {
   var $ = nut;
   var assert = chai.assert;
+  var qs = document.querySelector.bind(document);
 
   it('returns the first element matched', function() {
     assert.equal(
       $.el('.nut'),
-      document.getElementsByClassName('nut')[0]
+      qs('.nut')
     );
   });
 
   it('supports selectors', function() {
     assert.equal(
       $.el('div#nut'),
-      document.getElementById('nut')
+      qs('#nut')
     );
+  });
+
+  it('supports context', function() {
+    assert.equal(
+      $.el('#nut', qs('body')),
+      $.el('body > #nut')
+    )
   });
 });
