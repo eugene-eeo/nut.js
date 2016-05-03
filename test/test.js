@@ -55,6 +55,13 @@ describe('nut.el', function() {
     assert.equal(
       $.el('#nut', qs('body')),
       $.el('body > #nut')
-    )
+    );
+  });
+
+  it('supports context string', function() {
+    assert.equal(
+      $.el('#nut', 'body'),
+      $.el('body > #nut')
+    );
   });
 });
