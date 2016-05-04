@@ -5,54 +5,37 @@
   <title>Nut.js</title>
   <style>
 body {
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
+  max-width: 23em;
+  padding: 0 1em;
   margin: 3em auto;
-  width: 23em;
+  font-size: 20px;
   text-align: center;
-  font-size: 21px;
 }
 pre {
+  background-color: #F1F1F1;
+  padding: 0.5em;
+}
+code {
   font-family: Consolas, Monaco, monospace;
-  background-color: #EEE;
-  padding: 0.3em 1em;
 }
-h1, p {
-  margin: 0.4em 0 0 0;
-}
-a {
-  display: inline-block;
-  padding: 0.5em 1em;
-  font-weight: bold;
-  color: #000;
-  background-color: #EEE;
-  text-decoration: none;
-  min-width: 4.5em;
-  margin: 0 0.2em;
-}
-@media only screen and (max-device-width: 480px) {
-  body {
-    width: inherit;
-    font-size:18px;
-    margin: 1.5em 1em;
-  }
-  a {
-    display: block;
-    width: calc(100% - 5em);
-    margin: 0.5em auto;
-  }
+img {
+  width: 1.4em;
+  vertical-align: middle;
+  margin: 0 0.1em 0 0;
 }
   </style>
 </head>
 <body>
-  <img src='data:image/png;base64,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'></img>
-  <h1>nut.js</h1>
+  <h1><img src='nut.png'/> nut.js</h1>
   <p>
-    Dead simple, friendly selector engine that allows
-    you to abuse the native ES5 Array methods to your
-    heart's desire.
+    Simple selector engine that allows you to abuse
+    native Array methods to your heart's desire.
   </p>
-  <pre>nut('div.block').forEach(fn)</pre>
-  <a href='https://github.com/eugene-eeo/nut.js'>Github</a>
-  <a href='https://github.com/eugene-eeo/nut.js/releases/latest'>Download</a>
+  <pre>nut('div.block').map(fn)</pre>
+  <p>
+    Visit the <a href='https://github.com/eugene-eeo/nut.js'>Github</a> repo
+    or <a href='https://github.com/eugene-eeo/nut.js/releases/latest'>Download</a>.
+  </p>
 </body>
 </html>
